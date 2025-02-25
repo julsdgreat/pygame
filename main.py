@@ -3,6 +3,7 @@
 # throughout this file
 import pygame
 from constants import *
+from player import Player
 
 
 def main():
@@ -18,6 +19,9 @@ def main():
     clock = pygame.time.Clock()  # Create a Clock object to control FPS
     dt = 0  # Delta time variable
 
+    # Create a player object
+    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,)
+
     # Main game loop
     running = True
     while running:
@@ -26,6 +30,7 @@ def main():
                 running = False
 
         screen.fill((0, 0, 0))  # Fill screen with black
+        player.draw(screen)
         pygame.display.flip()  # Refresh the screen
 
         dt = clock.tick(60) / 1000  # Get delta time in seconds
