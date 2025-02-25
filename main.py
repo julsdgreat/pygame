@@ -30,6 +30,7 @@ def main():
                 running = False
 
         screen.fill((0, 0, 0))  # Fill screen with black
+        player.update(dt)  # handle movement
         player.draw(screen)
         pygame.display.flip()  # Refresh the screen
 
