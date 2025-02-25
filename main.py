@@ -15,6 +15,9 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
 
+    clock = pygame.time.Clock()  # Create a Clock object to control FPS
+    dt = 0  # Delta time variable
+
     # Main game loop
     running = True
     while running:
@@ -24,6 +27,8 @@ def main():
 
         screen.fill((0, 0, 0))  # Fill screen with black
         pygame.display.flip()  # Refresh the screen
+
+        dt = clock.tick(60) / 1000  # Get delta time in seconds
 
 
 if __name__ == "__main__":
